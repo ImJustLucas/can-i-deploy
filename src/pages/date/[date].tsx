@@ -6,6 +6,10 @@ import dayjs from "dayjs";
 export default function Date() {
   const router = useRouter();
 
+  if (router.query.date === undefined) {
+    router.push(`/`);
+  }
+
   const [date] = useState<string>(router.query.date as string);
   const [response, setResponse] = useState<boolean | null>(null);
 
