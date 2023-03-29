@@ -6,7 +6,7 @@ import dayjs from "dayjs";
 export default function Date() {
   const router = useRouter();
 
-  const [date, setDate] = useState<string>(router.query.date as string);
+  const [date] = useState<string>(router.query.date as string);
   const [response, setResponse] = useState<boolean | null>(null);
 
   const askApi = async () => {
