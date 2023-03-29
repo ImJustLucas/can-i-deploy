@@ -8,7 +8,6 @@ export default function Home() {
   const [response, setResponse] = useState<boolean | null>(null);
   const [date, setDate] = useState<string>("");
 
-  // get the seven next days
   const getSevenNextDays = () => {
     const days = [];
     for (let i = 0; i < 7; i++) {
@@ -36,7 +35,6 @@ export default function Home() {
         `http://localhost:3000/api/canIDeploy?date=${date}`
       );
       const data = await response.json();
-      console.log(data);
       setResponse(data.validated);
     } catch (error) {
       console.error(error);
