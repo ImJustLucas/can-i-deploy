@@ -57,9 +57,12 @@ export default function Home() {
           </ResponseConatiner>
         )}
       </FormContainer>
-      <hr />
+      <Separator />
       <FormContainer>
-        <Select onChange={setDateLink} placeholder="Select a date">
+        <Select color="white" onChange={setDateLink}>
+          <option selected disabled>
+            Choose a day
+          </option>
           {getSevenNextDays().map((day, index) => (
             <option key={index} value={day.toISOString().slice(0, 10)}>
               {day.toISOString().slice(0, 10)}
@@ -108,4 +111,10 @@ const FormContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+`;
+
+const Separator = styled.hr`
+  width: 60%;
+  border: 1px solid #ff8500;
+  border-radius: 2px;
 `;
